@@ -1,0 +1,162 @@
+{
+  "guitars": [
+    {
+      "id": 1,
+      "sku": "GTR001",
+      "brand": "Fender",
+      "name": "Stratocaster",
+      "image": ["image1.jpg", "image2.jpg", "image3.jpg"],
+      "type": "Guitar",
+      "category": "Electric",
+      "price": 1499.99,
+      "short_description": "Classic electric guitar with versatile tones.",
+      "long_description": "The Fender Stratocaster is a legendary electric guitar known for its iconic design and versatile sound. It features a comfortable neck, three single-coil pickups, and a tremolo system.",
+      "in_stock": true,
+      "features": [
+        "Body Size: 000C Jr 14 Fret",
+        "Finish Top: Satin",
+        "Construction: Mortise & Tenon Neck Joint",
+        "Back and Side Finish: Satin",
+        "Bracing Pattern: X Brace",
+        "Scale Length: 24''",
+        "Brace Shape: Scalloped",
+        "Fingerboard Width at Nut: 1 3/4''",
+        "Top Material: Spruce",
+        "Neck Shape: D Junior",
+        "Back Material: Solid Sapele",
+        "Neck Taper: High-Performance Taper",
+        "Side Material: Solid Sapele",
+        "Electronics: Fishman Sonitone BT-1"
+      ]
+    },
+    {
+      "id": 2,
+      "sku": "GTR002",
+      "brand": "Gibson",
+      "name": "Les Paul",
+      "image": ["image4.jpg", "image5.jpg", "image6.jpg"],
+      "type": "Guitar",
+      "category": "Electric",
+      "price": 2499.99,
+      "short_description": "Iconic electric guitar with a rich, warm tone.",
+      "long_description": "The Gibson Les Paul is a legendary electric guitar known for its solid body construction and powerful, warm tone. It features dual humbucking pickups, a mahogany body, and a set neck.",
+      "in_stock": false,
+      "features": [
+        "Body Size: 000C Jr 14 Fret",
+        "Finish Top: Satin",
+        "Construction: Mortise & Tenon Neck Joint",
+        "Back and Side Finish: Satin",
+        "Bracing Pattern: X Brace",
+        "Scale Length: 24''",
+        "Brace Shape: Scalloped",
+        "Fingerboard Width at Nut: 1 3/4''",
+        "Top Material: Spruce",
+        "Neck Shape: D Junior",
+        "Back Material: Solid Sapele",
+        "Neck Taper: High-Performance Taper",
+        "Side Material: Solid Sapele",
+        "Electronics: Fishman Sonitone BT-1"
+      ]
+    },
+    {
+      "id": 3,
+      "sku": "GTR003",
+      "brand": "Gretsch",
+      "name": "Streamliner",
+      "image": ["image7.jpg", "image8.jpg", "image9.jpg"],
+      "type": "Guitar",
+      "category": "Electric",
+      "price": 899.99,
+      "short_description": "Vintage-inspired electric guitar with a retro vibe.",
+      "long_description": "The Gretsch Streamliner is a vintage-inspired electric guitar that combines classic aesthetics with modern playability. It features Broad'Tron pickups, a Bigsby tremolo, and a lightweight body design.",
+      "in_stock": true,
+      "features": [
+        "Body Size: 000C Jr 14 Fret",
+        "Finish Top: Satin",
+        "Construction: Mortise & Tenon Neck Joint",
+        "Back and Side Finish: Satin",
+        "Bracing Pattern: X Brace",
+        "Scale Length: 24''",
+        "Brace Shape: Scalloped",
+        "Fingerboard Width at Nut: 1 3/4''",
+        "Top Material: Spruce",
+        "Neck Shape: D Junior",
+        "Back Material: Solid Sapele",
+        "Neck Taper: High-Performance Taper",
+        "Side Material: Solid Sapele",
+        "Electronics: Fishman Sonitone BT-1"
+      ]
+    },
+    {
+      "id": 4,
+      "sku": "GTR004",
+      "brand": "Taylor",
+      "name": "814ce",
+      "image": ["image10.jpg", "image11.jpg", "image12.jpg"],
+      "type": "Guitar",
+      "category": "Acoustic",
+      "price": 3499.99,
+      "short_description": "High-quality acoustic guitar with a balanced sound.",
+      "long_description": "The Taylor 814ce is a premium acoustic guitar that offers exceptional tone and playability. It features a solid spruce top, rosewood back and sides, and Taylor's renowned Expression System 2 electronics.",
+      "in_stock": true,
+      "features": [
+        "Body Size: 000C Jr 14 Fret",
+        "Finish Top: Satin",
+        "Construction: Mortise & Tenon Neck Joint",
+        "Back and Side Finish: Satin",
+        "Bracing Pattern: X Brace",
+        "Scale Length: 24''",
+        "Brace Shape: Scalloped",
+        "Fingerboard Width at Nut: 1 3/4''",
+        "Top Material: Spruce",
+        "Neck Shape: D Junior",
+        "Back Material: Solid Sapele",
+        "Neck Taper: High-Performance Taper",
+        "Side Material: Solid Sapele",
+        "Electronics: Fishman Sonitone BT-1"
+      ]
+    }
+  ],
+  "pedals": [
+    {
+      "id": 1,
+      "sku": "PED001",
+      "brand": "Boss",
+      "name": "DS-1",
+      "image": ["image13.jpg", "image14.jpg", "image15.jpg"],
+      "type": "Pedal",
+      "category": "Distortion",
+      "price": 79.99,
+      "short_description": "Classic distortion pedal with a wide range of tones.",
+      "long_description": "The Boss DS-1 is a legendary distortion pedal that has been a staple on countless pedalboards. It offers a wide range of distortion tones, from mild crunch to full-on saturation.",
+      "in_stock": true,
+      "features": [
+        "Controls: Level, Tone, Distortion",
+        "Classic distortion sound",
+        "Durable metal construction",
+        "Compact and easy to use",
+        "Powered by 9V battery or AC adapter"
+      ]
+    },
+    {
+      "id": 2,
+      "sku": "PED002",
+      "brand": "Electro-Harmonix",
+      "name": "Big Muff Pi",
+      "image": ["image16.jpg", "image17.jpg", "image18.jpg"],
+      "type": "Pedal",
+      "category": "Fuzz",
+      "price": 99.99,
+      "short_description": "Iconic fuzz pedal with a thick, creamy tone.",
+      "long_description": "The Electro-Harmonix Big Muff Pi is a legendary fuzz pedal known for its thick, creamy tone. It delivers a rich, sustaining fuzz that can range from smooth and warm to wild and aggressive.",
+      "in_stock": true,
+      "features": [
+        "Controls: Volume, Tone, Sustain",
+        "Classic fuzz sound",
+        "True bypass",
+        "Compact and rugged design",
+        "Powered by 9V battery or AC adapter"
+      ]
+    }
+  ]
+}
