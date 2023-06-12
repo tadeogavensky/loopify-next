@@ -24,7 +24,7 @@ export default function Login() {
           <div className="mt-10 sm:mx-auto sm:w-full w-full sm:max-w-sm">
             <form action="" className="space-y-6">
               <div className="flex flex-col">
-                <label className="font-bold">Email address</label>
+                <label className="">Email address</label>
                 <input
                   type="text"
                   className="px-2 py-1.5 border-black border-2 rounded-md"
@@ -33,10 +33,10 @@ export default function Login() {
 
               <div className="flex flex-col">
                 <div className="flex items-center justify-between flex-nowrap">
-                  <label className="flex-1 font-bold">Password</label>
+                  <label className="flex-1 ">Password</label>
                   <Link
                     href="/forgot-password"
-                    className="flex-2 text-indigo-600 hover:text-indigo-500 font-bold"
+                    className="flex-2 text-indigo-600 hover:text-indigo-500 "
                   >
                     Forgot password?
                   </Link>

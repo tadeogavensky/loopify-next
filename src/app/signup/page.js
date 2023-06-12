@@ -56,14 +56,14 @@ export default function Registration(){
             <form action="" className="space-y-6">
               <div className="flex items-center justify-between w-full flex-wrap ">
                 <div className="flex flex-col sm:w-[48%] w-full mb-6 sm:mb-0">
-                  <label className="font-bold">First Name</label>
+                  <label className="">First Name</label>
                   <input
                     type="text"
                     className="px-1 py-1.5 border-black border-2 rounded-md"
                   />
                 </div>
                 <div className="flex flex-col sm:w-[48%] w-full">
-                  <label className="font-bold">Last Name</label>
+                  <label className="">Last Name</label>
                   <input
                     type="text"
                     className="px-2 py-1.5 border-black border-2 rounded-md"
@@ -72,21 +72,21 @@ export default function Registration(){
               </div>
 
               <div className="flex flex-col">
-                <label className="font-bold">Email address</label>
+                <label className="">Email address</label>
                 <input
                   type="text"
                   className="px-2 py-1.5 border-black border-2 rounded-md"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="font-bold">Phone Number</label>
+                <label className="">Phone Number</label>
                 <input
                   type="text"
                   className="px-2 py-1.5 border-black border-2 rounded-md"
                 />
               </div>
               <div className="flex flex-col">
-                <label className="flex-1 font-bold">Password</label>
+                <label className="flex-1 ">Password</label>
                 <input
                   type="password"
                   className="px-2 py-1.5 border-black border-2 rounded-md"
@@ -121,7 +121,7 @@ export default function Registration(){
               </div>
 
               <div className="flex flex-col">
-                <label className="flex-1 font-bold">Confirm Password</label>
+                <label className="flex-1 ">Confirm Password</label>
                 <input
                   type="password"
                   className="px-2 py-1.5 border-black border-2 rounded-md"

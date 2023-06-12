@@ -5,7 +5,7 @@
       "sku": "GTR001",
       "brand": "Fender",
       "name": "Stratocaster",
-      "image": ["image1.jpg", "image2.jpg", "image3.jpg"],
+      "image": ["../images/lx1.png", "image2.jpg", "image3.jpg"],
       "type": "Guitar",
       "category": "Electric",
       "price": 1499.99,
@@ -114,6 +114,27 @@
         "Neck Taper: High-Performance Taper",
         "Side Material: Solid Sapele",
         "Electronics: Fishman Sonitone BT-1"
+      ]
+    },
+    {
+      "id": 5,
+      "sku": "GTR005",
+      "brand": "PRS",
+      "name": "Custom 24",
+      "image": ["image19.jpg", "image20.jpg", "image21.jpg"],
+      "type": "Guitar",
+      "category": "Electric",
+      "price": 2999.99,
+      "short_description": "Versatile electric guitar with stunning craftsmanship.",
+      "long_description": "The PRS Custom 24 is a highly versatile electric guitar that offers exceptional craftsmanship and attention to detail. It features a solid mahogany body with a maple top, PRS's signature bird inlays, and dual humbucking pickups for a wide range of tones.",
+      "in_stock": true,
+      "features": [
+        "Body Material: Mahogany with Maple Top",
+        "Neck Material: Mahogany",
+        "Fingerboard Material: Rosewood",
+        "Scale Length: 25\"",
+        "Number of Frets: 24",
+        "Pickup Configuration: HH"
       ]
     }
   ],
