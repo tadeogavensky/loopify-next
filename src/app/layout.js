@@ -10,9 +10,6 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Loopify",
-};
 
 const clientId =
   "394954289615-hgk85f9ul09op4flt4evf7ngpdaomb8a.apps.googleusercontent.com";
