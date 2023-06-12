@@ -114,7 +114,7 @@ export default function Home() {
       <ProductCarousel />
       <Incentives />
       <Payments />
-      {/*  <Footer /> */}
+       <Footer />
     </div>
   );
 }
@@ -127,8 +127,6 @@ const GridItems = () => {
           <Image
             src={category.image}
             alt={category.name}
-            width={500}
-            height={500}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition-opacity">
@@ -160,12 +158,9 @@ const Brands = () => {
         {brands.map((brand, index) => {
           return (
             <SwiperSlide key={index}>
-              <button className="w-[50%] sm:w-[40%] content-none">
-                <Image
-                  src={brand}
-                  className="w-full object-contain content-none"
-                />
-              </button>
+              <Link href={"brands/:name"} className="content-none flex justify-center">
+                <Image src={brand} className="relative w-1/2 sm:w-[40%]" />
+              </Link>
             </SwiperSlide>
           );
         })}

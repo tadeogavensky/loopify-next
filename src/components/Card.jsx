@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -21,12 +23,11 @@ export const Card = (props) => {
   return (
     <>
       <div className="flex flex-col items-center sm:w-full bg-white rounded-md w-full shadow-md pb-4 mb-4 px-[1rem] content-none cursor-default ">
-        <div className="h-[16rem] sm:h-[10rem] pt-2 relative text-center box-content">
-          <img
-            src={props.product.image}
-            alt={props.product.name}
-            className="h-full object-cover"
-          />
+        <div className="h-full  pt-2 relative text-center box-content overflow-hidden">
+          <Link href="/products/:category/:id">
+          
+            <Image src={props.product.image} className="relative" />
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-between mb-4 ">

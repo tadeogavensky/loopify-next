@@ -83,10 +83,10 @@ export const Footer = () => {
         <h1>DOWNLOAD LOOPIFY APP</h1>
 
         <div className="flex items-baseline gap-6">
-          <Link className="underline">
+          <Link href="/apple" className="underline">
             <AppleIcon sx={{ fontSize: "2rem" }} />
           </Link>
-          <Link className="underline">
+          <Link href="/android" className="underline">
             <AdbIcon sx={{ fontSize: "2rem" }} />
           </Link>
         </div>
@@ -118,11 +118,11 @@ const FooterButton = ({ name, selectedState, id }) => {
 const StoreLinks = () => {
   return (
     <div className="flex flex-col gap-3 mb-2">
-      <Link className="underline">Guitars</Link>
-      <Link className="underline">Pedals</Link>
-      <Link className="underline">Accessories</Link>
-      <Link className="underline">Vinyl</Link>
-      <Link className="underline">Lessons</Link>
+      <Link href="/products/guitars" className="underline">Guitars</Link>
+      <Link href="/products/pedals" className="underline">Pedals</Link>
+      <Link href="/products/gearaccessories" className="underline">Accessories</Link>
+      <Link href="/products/vinyls" className="underline">Vinyl</Link>
+      <Link href="/lessons" className="underline">Lessons</Link>
     </div>
   );
 };
@@ -130,9 +130,9 @@ const StoreLinks = () => {
 const AboutLinks = () => {
   return (
     <div className="flex flex-col gap-3 mb-2">
-      <Link className="underline">Store locator</Link>
-      <Link className="underline">Careers</Link>
-      <Link className="underline">Professional</Link>
+      <Link href="/store-locator" className="underline">Store locator</Link>
+      <Link href="/careers" className="underline">Careers</Link>
+      <Link href="/professional" className="underline">Professional</Link>
     </div>
   );
 };
@@ -140,10 +140,10 @@ const AboutLinks = () => {
 const AssistanceLinks = () => {
   return (
     <div className="flex flex-col gap-3 mb-2">
-      <Link className="underline">FAQ</Link>
-      <Link className="underline">Repairs</Link>
-      <Link className="underline">Track your order</Link>
-      <Link className="underline">Consumer defense</Link>
+      <Link href="/faq" className="underline">FAQ</Link>
+      <Link href="/repairs" className="underline">Repairs</Link>
+      <Link href="/order/track" className="underline">Track your order</Link>
+      <Link href="/consumer-defense" className="underline">Consumer defense</Link>
     </div>
   );
 };
@@ -151,66 +151,7 @@ const AssistanceLinks = () => {
 const ContactLinks = () => {
   return (
     <div className="mt-4 flex flex-col items-start gap-6">
-      <Link className="flex items-center gap-3 underline">
-        <div className="w-5 md:w-6">
-          <img src={chatsvg} alt="" className="w-full object-cover" />
-        </div>
-        <p>Chat with us</p>
-      </Link>
-      <Link className="flex flex-col">
-        <div className="flex items-center gap-3">
-          <div className="w-5 md:w-6">
-            <img src={callsvg} alt="" className="w-full object-cover" />
-          </div>
-          <p className="underline">Loopify Club</p>
-        </div>
-
-        <div className="flex flex-col ml-10 mt-4">
-          <span className="text-gray-500 text-sm">Mon-Fri 08am - 09pm</span>
-          <span className="text-gray-500 text-sm">Sat-Sun 09am - 09pm</span>
-        </div>
-      </Link>
-
-      <Link className="flex flex-col ">
-        <div className="flex items-center gap-3">
-          <div className="w-5 md:w-6">
-            <img src={chatsvg} alt="" className="w-full object-cover" />
-          </div>
-
-          <div className="flex flex-col underline">
-            <p>Whatsapp</p>
-          </div>
-        </div>
-
-        <div className="flex flex-col ml-10 mt-4">
-          <span className="text-gray-500 text-sm">Mon-Fri 08am - 09pm</span>
-          <span className="text-gray-500 text-sm">Sat-Sun 09am - 09pm</span>
-        </div>
-      </Link>
-
-      <Link className="flex flex-col">
-        <div className="flex items-center gap-3">
-          <div className="w-5 md:w-6">
-            <img src={callsvg} alt="" className="w-full object-cover" />
-          </div>
-          <div className="flex flex-col">
-            <p className="underline">From abroad</p>
-            <p>727-797-2133</p>
-          </div>
-        </div>
-      </Link>
-
-      <Link className="flex flex-col">
-        <div className="flex items-center gap-3">
-          <div className="w-5 md:w-6">
-            <img src={infocircle} alt="" className="w-full object-cover" />
-          </div>
-          <div className="flex flex-col">
-            <p>725 NE 166th St</p>
-            <p>Miami, Florida(FL), 33162</p>
-          </div>
-        </div>
-      </Link>
+      
     </div>
   );
 };
