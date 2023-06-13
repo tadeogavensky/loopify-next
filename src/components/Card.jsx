@@ -42,9 +42,7 @@ export const Card = (props) => {
               ${props.product.price}
             </p>
 
-            <button className="bg-[#FF753A] shadow-md hover:bg-[#C55E25] transition all duration-300 font-medium text-white sm:text-[12px] w-full px-8 py-2 rounded-full">
-              Add to basket
-            </button>
+           
           </div>
         </div>
       </div>

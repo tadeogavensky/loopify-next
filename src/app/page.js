@@ -42,11 +42,12 @@ import {
 } from "swiper";
 import "swiper/css";
 import "swiper/swiper-bundle.min.css";
+import swiperConfig from "../utils/swiperConfig";
+
 
 import { OrangeBorder } from "../components/OrangeBorder";
 import { Footer } from "../components/Footer";
 
-import swiperConfig from "../utils/swiperConfig";
 
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 
@@ -84,7 +85,6 @@ import keys from "../assets/images/categories/keys.jpg";
 import pedal from "../assets/images/categories/pedal.jpg";
 import cables from "../assets/images/categories/cables.jpg";
 import headphones from "../assets/images/categories/headphones.jpg";
-import { SwiperNavButtons } from "../utils/SwiperNavButtons";
 
 const categories = [
   {

@@ -8,6 +8,7 @@ import img from "../../assets/images/lx1.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { Card } from "@/components/Card";
 
 const ProductFeed = (props) => {
   const quickFilters = [
@@ -70,7 +71,7 @@ const ProductFeed = (props) => {
         </div>
         <div className="flex justify-between gap-6 items-center">
           <button
-            className="flex-1 w-full sm:px-12 sm:w-[25%] py-2 bg-[#FF753A] text-white font-semibold hover:bg-[#C55E25] transition all duration-300"
+            className="flex-1 w-full sm:px-12 sm:w-[25%] py-2 bg-[#FF753A] text-white font-medium hover:bg-[#C55E25] transition all duration-300"
             onClick={() => {
               openSideFilters();
             }}
@@ -104,18 +105,9 @@ const ProductFeed = (props) => {
             })}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 mt-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
           {mock.guitars.map((item, index) => (
-            <div className="flex flex-col group" key={index}>
-              <div className="h-full">
-                <Image src={img} alt="" className="w-full object-contain" />
-              </div>
-              <div className="flex flex-col items-center border-t-[2px] border-t-transparent group-hover:border-black">
-                <p className="text-[20px]">{item.name}</p>
-                <p>{item.brand}</p>
-                <p className="text-[20px]">${item.price}</p>
-              </div>
-            </div>
+            <Card product={item}/>
           ))}
         </div>
         <div
@@ -124,7 +116,7 @@ const ProductFeed = (props) => {
           } h-full bg-white transition-all duration-300 ease-in-out z-70 overflow-x-hidden w-[85%] shadow-sm pb-6  lg:hidden`}
         >
           <div className="flex py-4 px-6 items-center justify-between bg-black text-white">
-            <p className="font-semibold text-[16px]">{qty} Results</p>
+            <p className="font-medium text-[16px]">{qty} Results</p>
 
             <button
               onClick={() => {
@@ -166,7 +158,7 @@ const GuitarFilters = ({
     <ul>
       <li className="flex flex-col border-t-2 border-b-2 border-gray-200">
         <div className="flex items-center justify-between py-4"  onClick={()=>{setSelected(!selected)}}>
-          <p className="text-xl font-semibold">Price</p>
+          <p className="text-xl font-medium">Price</p>
           {selected ? (
             <FontAwesomeIcon icon={faPlus} />
           ) : (
@@ -257,7 +249,7 @@ const GuitarFilters = ({
       </li>
       <li className=" border-gray-200">
         <div className="flex items-center justify-between py-4">
-          <p className="text-xl font-semibold">Brand</p>
+          <p className="text-xl font-medium">Brand</p>
           {selected ? (
             <FontAwesomeIcon icon={faPlus} />
           ) : (
@@ -267,7 +259,7 @@ const GuitarFilters = ({
       </li>
       <li className="border-t-2 border-b-2 border-gray-200">
         <div className="flex items-center justify-between py-4">
-          <p className="text-xl font-semibold">Type</p>
+          <p className="text-xl font-medium">Type</p>
           {selected ? (
             <FontAwesomeIcon icon={faPlus} />
           ) : (
@@ -277,7 +269,7 @@ const GuitarFilters = ({
       </li>
       <li className=" border-gray-200">
         <div className="flex items-center justify-between py-4">
-          <p className="text-xl font-semibold">Wood</p>
+          <p className="text-xl font-medium">Wood</p>
           {selected ? (
             <FontAwesomeIcon icon={faPlus} />
           ) : (
@@ -287,7 +279,7 @@ const GuitarFilters = ({
       </li>
       <li className="border-t-2 border-b-2 border-gray-200">
         <div className="flex items-center justify-between py-4">
-          <p className="text-xl font-semibold">Finish</p>
+          <p className="text-xl font-medium">Finish</p>
           {selected ? (
             <FontAwesomeIcon icon={faPlus} />
           ) : (
@@ -297,7 +289,7 @@ const GuitarFilters = ({
       </li>
       <li className=" border-gray-200">
         <div className="flex items-center justify-between py-4">
-          <p className="text-xl font-semibold">Strings</p>
+          <p className="text-xl font-medium">Strings</p>
           {selected ? (
             <FontAwesomeIcon icon={faPlus} />
           ) : (
@@ -307,7 +299,7 @@ const GuitarFilters = ({
       </li>
       <li className="border-t-2 border-b-2 border-gray-200">
         <div className="flex items-center justify-between py-4">
-          <p className="text-xl font-semibold">Electronics</p>
+          <p className="text-xl font-medium">Electronics</p>
           {selected ? (
             <FontAwesomeIcon icon={faPlus} />
           ) : (
