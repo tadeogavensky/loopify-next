@@ -199,7 +199,7 @@ const Navigation = () => {
       <div
         className={`absolute top-18 ${
           showSidebar ? "left-0" : "-left-full"
-        } h-full bg-white transition-all duration-300 ease-in-out z-50 overflow-x-hidden w-[55%] shadow-sm pb-6  lg:hidden`}
+        } h-full bg-white transition-all duration-300 ease-in-out z-50 overflow-x-hidden w-[85%] shadow-sm pb-6  lg:hidden`}
       >
         <div className="flex flex-col w-full">
           <form
