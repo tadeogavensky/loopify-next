@@ -1,16 +1,21 @@
 "use client";
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 import DataDetails from "./dataDetails";
 import PersonalDetails from "./personalDetails";
-import Confirmation from "./confirmation";
 import Success from "./success";
 
 export default function Registration() {
   const [step, setStep] = useState(1);
   const [dataDetails, setDataDetails] = useState({});
   const [personalDetails, setPersonalDetails] = useState({});
+  const [completeObject, setCompleteObject] = useState({});
+
+  useEffect(() => {
+    console.log("completeObject:", completeObject);
+  }, [completeObject]);
 
   const handleDataDetailsNext = (data) => {
     setDataDetails(data);
@@ -19,7 +24,10 @@ export default function Registration() {
 
   const handlePersonalDetailsNext = (data) => {
     setPersonalDetails(data);
-    console.log('personalDetails :>> ', personalDetails);
+    setCompleteObject({
+      dataDetails,
+      personalDetails: data,
+    });
     setStep(step + 1);
   };
 
@@ -33,7 +41,7 @@ export default function Registration() {
 
   return (
     <div>
-      <div className="flex flex-col  bg-white justify-around">
+      <div className="flex flex-col bg-white justify-around">
         <div className="flex min-h-full flex-1 flex-col items-center px-6 py-12 lg:px-8">
           <Link href="/">
             <h1 className="text-[#FF753A] text-[30px] uppercase worksans-bold">
@@ -42,7 +50,7 @@ export default function Registration() {
             </h1>
           </Link>
 
-          <p className="text-lg sm:text-2xl worksans-regular mt-10 border-b-[#FF753A] border-b-4 pb-2 ">
+          <p className="text-lg sm:text-2xl worksans-regular mt-10 border-b-[#FF753A] border-b-4 pb-2">
             Create your account
           </p>
         </div>
@@ -57,15 +65,7 @@ export default function Registration() {
           />
         )}
 
-        {step === 3 && (
-          <Confirmation
-            dataDetails={dataDetails}
-            personalDetails={personalDetails}
-            onBack={handleConfirmationBack}
-            onNext={handleConfirmationNext}
-          />
-        )}
-        {step === 4 && <Success />}
+        {step === 3 && <Success />}
       </div>
     </div>
   );

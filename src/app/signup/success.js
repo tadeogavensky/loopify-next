@@ -1,11 +1,28 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
+import success from "../../assets/images/success.svg";
+import Image from "next/image";
 
 export default function Success() {
+  useEffect(() => {
+    const redirectTimeout = setTimeout(() => {
+      window.location.href = "/"; // Replace "/destination" with your desired URL
+    }, 3000);
+
+    return () => {
+      clearTimeout(redirectTimeout); // Clear the timeout if the component is unmounted before the delay completes
+    };
+  }, []);
+
   return (
-    <div>
-      <h2>Success!</h2>
-      <p>Your signup process is complete. Thank you!</p>
+    <div className="flex flex-col items-center justify-center gap-5">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold mb-4">Success!</h2>
+        <p className="text-lg text-gray-600">
+          Your signup process is complete. Let's get rocking!
+        </p>
+      </div>
+      <Image src={success} width={300} />
     </div>
   );
 }

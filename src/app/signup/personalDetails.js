@@ -1,17 +1,43 @@
 "use client";
 
-import React, { useState } from "react";
+import Image from "next/image";
+import React, { useState, useEffect } from "react";
 
 export default function PersonalDetails({ onBack, onNext, data }) {
   const [firstName, setFirstName] = useState(data.firstName || "");
   const [lastName, setLastName] = useState(data.lastName || "");
   const [phone, setPhone] = useState(data.phone || "");
   const [address, setAddress] = useState(data.address || "");
+  const [country, setCountry] = useState(data.country || "");
+
+  const [countries, setCountries] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onNext({ firstName, lastName, phone, address });
+    onNext({ firstName, lastName, phone, address, country });
   };
+
+  const isButtonDisabled =
+    firstName.trim() === "" ||
+    lastName.trim() === "" ||
+    phone.trim() === "" ||
+    address.trim() === "";
+  country.selected;
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("https://restcountries.com/v2/all");
+        const data = await response.json();
+        setCountries(data);
+        console.log("countries :>> ", countries);
+      } catch (error) {
+        console.log("Error fetching countries:", error);
+      }
+    };
+
+    fetchCountries();
+  }, []);
 
   return (
     <div className="sm:mx-auto px-6">
@@ -53,6 +79,22 @@ export default function PersonalDetails({ onBack, onNext, data }) {
             />
           </div>
           <div className="flex flex-col">
+            <label>Country</label>
+            <select
+              id="country"
+              name="country"
+              onChange={(e) => {
+                setCountry(e.target.options[e.target.selectedIndex].value);
+              }}
+            >
+              {countries.map((country, index) => (
+                <option key={index} value={country.name}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex flex-col">
             <label>Address</label>
             <input
               type="text"
@@ -74,13 +116,12 @@ export default function PersonalDetails({ onBack, onNext, data }) {
           </button>
           <button
             onClick={handleSubmit}
-            className="w-full bg-[#FF753A] shadow-md hover:bg-[#FF8C42] transition all duration-300 font-medium text-white text-sm px-8 py-2 rounded-md"
-            disabled={
-              firstName.trim() === "" ||
-              lastName.trim() === "" ||
-              phone.trim() === "" ||
-              address.trim() === ""
-            }
+            className={`w-full shadow-md transition-all duration-300 font-medium text-white text-sm px-8 py-2 rounded-md ${
+              isButtonDisabled
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-[#FF753A] hover:bg-[#FF8C42] cursor-pointer"
+            }`}
+            disabled={isButtonDisabled}
           >
             Next
           </button>

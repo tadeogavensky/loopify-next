@@ -40,8 +40,15 @@ export default function DataDetails({ onNext, data }) {
     onNext({ email, password });
   };
 
+  const isButtonDisabled =
+    !confirmPassword ||
+    checkPassword.some((password) => !password.isValid) ||
+    email.trim() === "" ||
+    password.trim() === "" ||
+    passwordConfirm.trim() === "";
+
   return (
-    <div className="sm:mx-auto sm:w-[25%] px-6">
+    <div className="sm:mx-auto sm:w-[400px] px-6">
       <form action="" className="space-y-6" onSubmit={handleSubmit}>
         <div className="flex flex-col">
           <label>Email address</label>
@@ -104,14 +111,12 @@ export default function DataDetails({ onNext, data }) {
 
         <button
           id="next-button"
-          className="w-full bg-[#FF753A] shadow-md hover:bg-[#FF8C42]  transition all duration-300 font-medium text-white text-sm px-8 py-2 rounded-md"
-          disabled={
-            !confirmPassword ||
-            checkPassword.some((password) => !password.isValid) ||
-            email.trim() === "" ||
-            password.trim() === "" ||
-            passwordConfirm.trim() === ""
-          }
+          className={`w-full shadow-md transition-all duration-300 font-medium text-white text-sm px-8 py-2 rounded-md ${
+            isButtonDisabled
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-[#FF753A] hover:bg-[#FF8C42] cursor-pointer"
+          }`}
+          disabled={isButtonDisabled}
           onClick={handleSubmit}
         >
           Next

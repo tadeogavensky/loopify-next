@@ -159,7 +159,7 @@ const Brands = () => {
           return (
             <SwiperSlide key={index}>
               <Link href={"brands/:name"} className="content-none flex justify-center">
-                <Image src={brand} className="relative w-1/2 sm:w-[40%]" />
+                <Image src={brand} className="relative w-1/2 sm:w-[40%]" alt={brand}/>
               </Link>
             </SwiperSlide>
           );
@@ -185,8 +185,8 @@ const Featured = () => {
       </div>
 
       <div className="w-[350px] lg:w-[400px] bg-gradient-to-l  from-[#FF753A] rounded-md justify-center items-center shadow-lg hidden sm:flex">
-        <Image src={arrow} className="relative bottom-20 rotate-45" />
-        <Image src={ed} className="object-cover" />
+        <Image alt="arrow" src={arrow} className="relative bottom-20 rotate-45" />
+        <Image alt="Ed Sheeran" src={ed} className="object-cover" />
       </div>
     </div>
   );
@@ -309,7 +309,7 @@ const Payments = () => {
                 key={index}
                 className=" w-16 sm:w-14 gap-5 flex flex-row items-center"
               >
-                <Image src={img} className="w-full object-cover" />
+                <Image src={img} alt="payment" className="w-full object-cover" />
               </div>
             );
           })}
