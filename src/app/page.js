@@ -44,10 +44,8 @@ import "swiper/css";
 import "swiper/swiper-bundle.min.css";
 import swiperConfig from "../utils/swiperConfig";
 
-
 import { OrangeBorder } from "../components/OrangeBorder";
 import { Footer } from "../components/Footer";
-
 
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 
@@ -70,9 +68,10 @@ const brands = [
 const product = {
   id: 1,
   image: lx1,
-  category: "Acoustic Guitars",
+  category: "guitars",
+  type: "acoustic",
   price: 299.99,
-  name: "Martin LX1",
+  name: "LX1",
   short_description:
     "The Little Martin LX1: small in size, big in tone. Ideal for travel, practice, and casual playing. Includes sustainable wood parts.",
 };
@@ -114,7 +113,7 @@ export default function Home() {
       <ProductCarousel />
       <Incentives />
       <Payments />
-       <Footer />
+      <Footer />
     </div>
   );
 }
@@ -158,8 +157,15 @@ const Brands = () => {
         {brands.map((brand, index) => {
           return (
             <SwiperSlide key={index}>
-              <Link href={"brands/:name"} className="content-none flex justify-center">
-                <Image src={brand} className="relative w-1/2 sm:w-[40%]" alt={brand}/>
+              <Link
+                href={"brands/:name"}
+                className="content-none flex justify-center"
+              >
+                <Image
+                  src={brand}
+                  className="relative w-1/2 sm:w-[40%]"
+                  alt={brand}
+                />
               </Link>
             </SwiperSlide>
           );
@@ -185,7 +191,11 @@ const Featured = () => {
       </div>
 
       <div className="w-[350px] lg:w-[400px] bg-gradient-to-l  from-[#FF753A] rounded-md justify-center items-center shadow-lg hidden sm:flex">
-        <Image alt="arrow" src={arrow} className="relative bottom-20 rotate-45" />
+        <Image
+          alt="arrow"
+          src={arrow}
+          className="relative bottom-20 rotate-45"
+        />
         <Image alt="Ed Sheeran" src={ed} className="object-cover" />
       </div>
     </div>
@@ -309,7 +319,11 @@ const Payments = () => {
                 key={index}
                 className=" w-16 sm:w-14 gap-5 flex flex-row items-center"
               >
-                <Image src={img} alt="payment" className="w-full object-cover" />
+                <Image
+                  src={img}
+                  alt="payment"
+                  className="w-full object-cover"
+                />
               </div>
             );
           })}

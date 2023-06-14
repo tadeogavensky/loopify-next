@@ -64,7 +64,7 @@ const ProductFeed = (props) => {
   return (
     <>
       <div className=" relative w-full px-4 ">
-        <h1>{type}</h1>
+       {/*  <h1>{type}</h1>
 
         <div className="flex justify-center w-full mb-3">
           <p className="block sm:hidden">{qty} Results</p>
@@ -141,7 +141,7 @@ const ProductFeed = (props) => {
               handleFilterChange={handleFilterChange}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

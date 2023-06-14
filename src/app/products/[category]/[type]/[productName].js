@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router.js";
 
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import {
@@ -15,13 +16,17 @@ import {
 } from "swiper";
 import "swiper/css";
 import "swiper/swiper-bundle.min.css";
-import swiperConfig from "../../../utils/swiperConfig.ts";
+import swiperConfig from "../../../../utils/swiperConfig.js";
 
 import lx1 from "../../../assets/images/lx1.png";
 
 import mock from "../../../assets/mocks/mock.json";
 
-const Product = () => {
+export default function Product() {
+  const router = useRouter();
+  const { productName, type, category } = router.query;
+  console.log("object :>> ", { productName, type, category });
+
   const product = {
     id: 1,
     image: lx1,
@@ -29,7 +34,7 @@ const Product = () => {
     type: "Acoustic",
     price: 299.99,
     bio: "Compact, versatile, and resonant",
-    name: "Martin LX1",
+    name: { productName },
     short_description:
       "The Little Martin LX1: small in size, big in tone. Ideal for travel, practice, and casual playing. Includes sustainable wood parts.",
     long_description:
@@ -56,13 +61,14 @@ const Product = () => {
 
   return (
     <div className="flex flex-col ">
-      <Main product={product} />
+      <h1>{productName}</h1>
+      {/*   <Main product={product} />
       <Context />
       <Specifications specs={specs} />
-      <RecommendedProducts recommendedProducts={mock} />
+      <RecommendedProducts recommendedProducts={mock} /> */}
     </div>
   );
-};
+}
 
 const Main = ({ product }) => {
   <div className="bg-white">
@@ -177,5 +183,3 @@ const RecommendedProducts = ({ recommendedProducts }) => {
     </div>
   );
 };
-
-export default Product;
