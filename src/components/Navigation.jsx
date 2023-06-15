@@ -96,19 +96,19 @@ const Navigation = () => {
               </h1>
             </Link>
 
-            <Link href="/products/guitars" className="font-bold link-item ">
+            <Link href="/products/guitars" className="font-normal link-item ">
               Guitars
             </Link>
             <Link
               href="/products/gearaccessories"
-              className="font-bold link-item "
+              className="font-normal link-item "
             >
               Gear & Accessories
             </Link>
-            <Link href="/lessons" className="font-bold link-item ">
+            <Link href="/lessons" className="font-normal link-item ">
               Lessons
             </Link>
-            <Link href="/aboutus" className="font-bold link-item ">
+            <Link href="/aboutus" className="font-normal link-item ">
               This Is Loopify
             </Link>
           </div>
@@ -221,7 +221,7 @@ const Navigation = () => {
             <Link
               href="/products/guitars"
               passHref
-              className="flex items-center justify-between gap-5 text-[16px] font-bold"
+              className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}
             >
               <p>Guitars</p>
@@ -230,7 +230,7 @@ const Navigation = () => {
             <Link
               href="/products/pedals"
               passHref
-              className="flex items-center justify-between gap-5 text-[16px] font-bold"
+              className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}
             >
               <p>Pedals</p>
@@ -239,7 +239,7 @@ const Navigation = () => {
             <Link
               href="/products/gear-accessories"
               passHref
-              className="flex items-center justify-between gap-5 text-[16px] font-bold"
+              className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}
             >
               <p>Gear & Accessories</p>
@@ -248,7 +248,7 @@ const Navigation = () => {
             <Link
              href="/products/vinyls"
               passHref
-              className="flex items-center justify-between gap-5 text-[16px] font-bold"
+              className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}
             >
               <p>Vinyls</p>
@@ -257,7 +257,7 @@ const Navigation = () => {
             <Link
               href="/lessons"
               passHref
-              className="flex items-center justify-between gap-5 text-[16px] font-bold"
+              className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}
             >
               <p>Lessons</p>
@@ -266,7 +266,7 @@ const Navigation = () => {
             <Link
               href="/about"
               passHref
-              className="flex items-center justify-between gap-5 text-[16px] font-bold"
+              className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}
             >
               <p>About Us</p>
@@ -275,7 +275,7 @@ const Navigation = () => {
             <Link
               href="/login"
               passHref
-              className="flex items-center justify-between gap-5 text-[16px] font-bold"
+              className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}
             >
               <p>Sign In</p>

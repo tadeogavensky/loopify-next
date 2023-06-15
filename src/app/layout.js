@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <head><title>Loopify</title></head>
         <body className={inter.className}>
           <Navigation />
-          <main id="home"> {children}</main>
+          <main id="home" className=""> {children}</main>
         </body>
       </html>
     </GoogleOAuthProvider>

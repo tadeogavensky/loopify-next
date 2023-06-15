@@ -11,11 +11,7 @@ export const Card = (props) => {
       <div className="flex flex-col items-center sm:w-full bg-white rounded-md w-full shadow-md pb-4 mb-4 px-[1rem] content-none cursor-default ">
         <div className="h-full  pt-2 relative text-center box-content overflow-hidden">
           <Link
-            href={`/products/${encodeURIComponent(
-              props.product.category
-            )}/${encodeURIComponent(props.product.type)}/${encodeURIComponent(
-              props.product.name
-            )}}`}
+            href={`/products/${props.product.category}/${props.product.name}`}
           >
             <Image src={props.product.image} className="relative" />
           </Link>

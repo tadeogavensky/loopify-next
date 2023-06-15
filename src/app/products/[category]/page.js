@@ -1,8 +1,11 @@
 "use client";
-import { useRouter } from "next/navigation";
 
-export default function ProductCategory() {
-  const router = useRouter();
+export default function Category() {
+  // Fetch data for the category and display it
 
-  return <div>{router.query}</div>;
+  return (
+    <div>
+      <h1>Category: </h1>
+    </div>
+  );
 }
