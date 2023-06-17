@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CartContext } from "@/components/context/CartContext";
 
 import Link from "next/link";
 
@@ -28,12 +29,15 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 const Navigation = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [userLogged, setUserLogged] = useState(false);
+  const [userIsAdmin, setUserIsAdmin] = useState(true);
+
   const [userMenuOpen, setUserMenuOpen] = useState(false);
-  const [cartItems, setCartItems] = useState(0); // To be an object with, array of products, qty of items, price, state of cart, etc
+
+  const cart = useContext(CartContext);
 
   const openSidebar = () => {
     setShowSidebar(!showSidebar);
-    console.log("showSidebar :>> ", showSidebar);
+
     document.querySelector("body").classList.add("no-scroll");
     document
       .querySelector("#home")
@@ -151,12 +155,26 @@ const Navigation = () => {
                   onMouseEnter={openUserMenu}
                   onMouseLeave={closeUserMenu}
                 >
-                  <button className="w-full hover:bg-gray-300 p-2">
-                    <Link href="/login"> Sign In</Link>
-                  </button>
-                  <button className="w-full hover:bg-gray-300 p-2">
-                    <Link href="/signup">Create Account</Link>
-                  </button>
+                  {!userLogged && (
+                    <button className="w-full hover:bg-gray-300 p-2">
+                      <Link href="/login">Sign In</Link>
+                    </button>
+                  )}
+                  {!userLogged && (
+                    <button className="w-full hover:bg-gray-300 p-2">
+                      <Link href="/signup">Create Account</Link>
+                    </button>
+                  )}
+                  {userLogged && (
+                    <button className="w-full hover:bg-gray-300 p-2">
+                      <Link href="/account">Account</Link>
+                    </button>
+                  )}
+                  {userLogged && userIsAdmin && (
+                    <button className="w-full hover:bg-gray-300 p-2">
+                      <Link href="/dashboard">Dashboard</Link>
+                    </button>
+                  )}
                 </div>
               )}
             </div>
@@ -164,7 +182,7 @@ const Navigation = () => {
             <button className="relative">
               <ShoppingCartOutlinedIcon />
               <div className="absolute bottom-4 left-6 flex items-center justify-center bg-[#FF753A] rounded-full px-1">
-                <p className=" text-white text-xs">{cartItems}</p>
+                <p className=" text-white text-xs">{cart.cart.qty}</p>
               </div>
             </button>
           </div>
@@ -190,7 +208,7 @@ const Navigation = () => {
           <button className="relative lg:hidden mr-2">
             <ShoppingCartOutlinedIcon />
             <div className="absolute bottom-4 left-6 flex items-center justify-center bg-[#FF753A] rounded-full px-1">
-              <p className=" text-white text-xs">{cartItems}</p>
+              <p className=" text-white text-xs">{cart.cart.qty}</p>
             </div>
           </button>
         </div>
@@ -246,7 +264,7 @@ const Navigation = () => {
               <ArrowRightIcon />
             </Link>
             <Link
-             href="/products/vinyls"
+              href="/products/vinyls"
               passHref
               className="flex items-center justify-between gap-5 text-[16px] font-normal"
               onClick={closeSidebar}

@@ -5,7 +5,12 @@ import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import Link from "next/link";
 
+const session = true;
+
 export default function Login() {
+
+  if(!session) throw new Error("Auth is needed to access")
+
   return (
     <div className="">
       <div className="flex  flex-col  bg-white justify-around">

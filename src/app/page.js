@@ -211,12 +211,6 @@ const ProductCarousel = () => {
     product,
     product,
     product,
-    product,
-    product,
-    product,
-    product,
-    product,
-    product,
   ];
   const swiper = useSwiper();
   return (

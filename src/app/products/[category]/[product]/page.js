@@ -198,13 +198,11 @@ const Specifications = ({ specs }) => {
 
 const RecommendedProducts = ({ recommendedProducts }) => {
   return (
-    <div className="flex justify-center flex-col items-center">
-      <div className="flex w-full px-12 justify-start my-8">
-        <h1 className="worksans-bold text-center text-2xl">
-          Recommended Products
-        </h1>
+    <div className="mb-12 relative flex flex-col items-center">
+      <div className="flex flex-col items-center my-8">
+        <h1 className="worksans-bold text-center text-2xl">Recommended Products</h1>
       </div>
-      <div className="relative">
+      <div className="relative ">
         <Swiper
           {...swiperConfig}
           modules={[Navigation, Pagination]}
