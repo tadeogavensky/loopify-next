@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,12 +21,14 @@ import mock from "../../../../assets/mocks/mock.json";
 
 import lx1 from "../../../../assets/images/lx1.png";
 
+import aa from "../../../../assets/images/logo.png";
+
 import { Card } from "@/components/Card.jsx";
 
 export default function Product() {
   const product = {
     id: 1,
-    image: lx1,
+    images: [lx1, aa, lx1, aa],
     category: "Guitars",
     type: "Acoustic",
     price: 299.99,
@@ -37,6 +39,9 @@ export default function Product() {
     long_description:
       "Martin Junior Series instruments are slightly smaller than our full-sized instruments, but you won’t have to sacrifice tone or volume, and you’ll gain plenty of comfort and portability. This Martin DJR-10E acoustic-electric bass is ideal if you love to write and practice on an unplugged bass but also need the option to plug it in to record or play live with your band. It includes a spruce top and sapele back and sides to deliver thumping Martin bass tones, whether you are unplugged or using the built-in Fishman® electronics. It also includes a fast, comfortable neck so you can keep the rhythm section tight. The DJR-10E Bass is strung with Martin short scale bass strings that are made specifically for this instrument.",
   };
+
+  const [mainImage, setImage] = useState(product.images[0]);
+  console.log("mainImage :>> ", mainImage);
 
   const specs = [
     {
@@ -71,9 +76,14 @@ export default function Product() {
     },
   ];
 
+  useEffect(() => {
+  console.log('mainImage :>> ', mainImage);
+  }, [])
+  
+
   return (
     <div className="">
-      <Main product={product} />
+      <Main product={product} setImage={setImage} mainImage={mainImage}/>
       <Context product={product} />
       <Specifications specs={specs} />
       <RecommendedProducts recommendedProducts={Object.values(mock)} />
@@ -81,7 +91,7 @@ export default function Product() {
   );
 }
 
-const Main = ({ product }) => {
+const Main = ({ product, setImage, mainImage }) => {
   const fetchedUrl =
     "https://www.nespresso.com/shared_res/agility/n-components/pdp/sku-main-info/background/background_L.jpg";
   return (
@@ -99,8 +109,37 @@ const Main = ({ product }) => {
               See all {product.category}
             </Link>
           </div>
-          <div className="lg:w-[500px] pointer-events-none">
-            <Image src={product.image} />
+          <div className="lg:w-[600px] pointer-events-none flex ">
+            <div className="hidden sm:flex flex-col gap-3">
+              {product.images.map((image, index) => (
+                <Image
+                  src={image}
+                  alt="Product Image 1"
+                  className="object-cover border-2 border-gray-200 hover:backdrop-brightness-75"
+                  key={index}
+                  width={50}
+                  height={50}
+                  onClick={setImage(image)}
+                />
+              ))
+              
+              }
+            </div>
+
+            <Image src={mainImage} />
+          </div>
+          <div className="flex flex-row items-center sm:hidden gap-3">
+            {product.images.map((image, index) => (
+              <Image
+                src={image}
+                alt="Product Image 1"
+                className="object-cover border-2 border-gray-200"
+                width={50}
+                height={50}
+                key={index}
+                onClick={setImage(image)}
+              />
+            ))}
           </div>
 
           <div className="w-full flex justify-end sm:justify-start">
@@ -200,7 +239,9 @@ const RecommendedProducts = ({ recommendedProducts }) => {
   return (
     <div className="mb-12 relative flex flex-col items-center">
       <div className="flex flex-col items-center my-8">
-        <h1 className="worksans-bold text-center text-2xl">Recommended Products</h1>
+        <h1 className="worksans-bold text-center text-2xl">
+          Recommended Products
+        </h1>
       </div>
       <div className="relative ">
         <Swiper
